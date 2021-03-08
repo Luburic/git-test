@@ -19,7 +19,7 @@ public class Store {
         String searchText = scanner.nextLine();
 
         for (String p : inventory) {
-            if (p.toLowerCase().contains(searchText.toLowerCase())) {
+            if (p.toUpperCase().contains(searchText.toUpperCase())) {
                 System.out.println(p);
             }
         }
