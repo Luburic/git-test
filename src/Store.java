@@ -10,6 +10,9 @@ public class Store {
         ArrayList<String> inventory = new ArrayList<String>();
         inventory.add("Tastatura XZ");
         inventory.add("Tastatura YY");
+        inventory.add("Ves masina 12");
+        inventory.add("Ves masina X4");
+        inventory.add("Pegla TT");
 
         System.out.println("Unesi parametar pretrage:");
         Scanner scanner = new Scanner(System.in);
