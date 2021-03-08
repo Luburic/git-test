@@ -10,8 +10,6 @@ public class Store {
         ArrayList<String> inventory = new ArrayList<String>();
         inventory.add("Tastatura XZ");
         inventory.add("Tastatura YY");
-        inventory.add("Televizor LG x1");
-        inventory.add("Televizor LG GG");
 
         System.out.println("Unesi parametar pretrage:");
         Scanner scanner = new Scanner(System.in);
