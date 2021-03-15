@@ -5,22 +5,32 @@ import java.util.Scanner;
 public class Store {
 
     public static void main(String[] args) {
-        //Za svaki proizvod ukljuci i njegovu cenu i kolicinu
+        //Ispisi totalnu vrednost inventara
 
         ArrayList<HashMap<String, String>> inventory = createInventory();
 
 
-        System.out.println("Unesi parametar pretrage:");
-        Scanner scanner = new Scanner(System.in);
-        String searchText = scanner.nextLine();
+        //System.out.println("Unesi parametar pretrage:");
+        //Scanner scanner = new Scanner(System.in);
+        //String searchText = scanner.nextLine();
 
+        //for (HashMap<String, String> p : inventory) {
+        //    if (p.get("name").toUpperCase().contains(searchText.toUpperCase())) {
+        //        System.out.println("\n\nName: " + p.get("name"));
+        //        System.out.println("\nPrice: " + p.get("price"));
+        //        System.out.println("\nQuantity: " + p.get("quantity"));
+        //    }
+        //}
+
+        int sum = 0;
         for (HashMap<String, String> p : inventory) {
-            if (p.get("name").toUpperCase().contains(searchText.toUpperCase())) {
-                System.out.println("\n\nName: " + p.get("name"));
-                System.out.println("\nPrice: " + p.get("price"));
-                System.out.println("\nQuantity: " + p.get("quantity"));
-            }
+            double price = Double.parseDouble(p.get("price"));
+            double quantity = Double.parseDouble(p.get("quantity"));
+
+            sum += price * quantity;
         }
+
+        System.out.println("Total value is: " + sum);
 
     }
 
