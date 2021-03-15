@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Store {
@@ -7,9 +6,11 @@ public class Store {
     //ispisuje sve proizvode cije ime se poklapa sa rezultatima pretrage
 
     public static void main(String[] args) {
-        ArrayList<String> inventory = new ArrayList<String>();
+        ArrayList<String> inventory = new ArrayList<>();
         inventory.add("Tastatura XZ");
         inventory.add("Tastatura YY");
+        inventory.add("Televizor LG KY");
+        inventory.add("Televizor Samsung X1");
         inventory.add("Ves masina 12");
         inventory.add("Ves masina X4");
         inventory.add("Pegla TT");
