@@ -2,8 +2,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Store {
-    //zatim omogucuje korisniku da pretrazi inventar (unos sa tastature)
-    //ispisuje sve proizvode cije ime se poklapa sa rezultatima pretrage
 
     public static void main(String[] args) {
         ArrayList<String> inventory = new ArrayList<>();
