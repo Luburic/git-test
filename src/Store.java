@@ -10,8 +10,10 @@ public class Store {
         inventory.add("Televizor LG KY");
         inventory.add("Televizor Samsung X1");
         inventory.add("Ves masina 12");
+        inventory.add("Ves masina YY");
         inventory.add("Ves masina X4");
         inventory.add("Pegla TT");
+        inventory.add("Pegla TX");
 
         System.out.println("Unesi parametar pretrage:");
         Scanner scanner = new Scanner(System.in);
