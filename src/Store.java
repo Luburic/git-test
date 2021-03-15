@@ -6,9 +6,7 @@ public class Store {
     public static void main(String[] args) {
         ArrayList<String> inventory = new ArrayList<>();
         inventory.add("Tastatura XZ");
-        inventory.add("Tastatura YY");
         inventory.add("Televizor LG KY");
-        inventory.add("Televizor Samsung X1");
         inventory.add("Ves masina 12");
         inventory.add("Ves masina YY");
         inventory.add("Ves masina X4");
