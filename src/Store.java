@@ -3,8 +3,6 @@ import java.util.ArrayList;
 public class Store {
 
     public static void main(String[] args) {
-        //Ispisi totalnu vrednost inventara
-
         ArrayList<Product> inventory = createInventory();
 
 
@@ -35,18 +33,11 @@ public class Store {
     private static ArrayList<Product> createInventory() {
         ArrayList<Product> inventory = new ArrayList<>();
 
-        inventory.add(createProduct("Tastatura XZ", 3000, 3));
-        inventory.add(createProduct("Tastatura YY", 3999, 5));
-        inventory.add(createProduct("Televizor LG KY", 25000, 3));
-        inventory.add(createProduct("Televizor Samsung X1", 15000, 4));
+        inventory.add(new Product("Tastatura XZ", 3000, 3));
+        inventory.add(new Product("Tastatura YY", 3999, 5));
+        inventory.add(new Product("Televizor LG KY", 25000, 3));
+        inventory.add(new Product("Televizor Samsung X1", 15000, 4));
         return inventory;
     }
 
-    private static Product createProduct(String name, double price, double quantity) {
-        Product product = new Product();
-        product.name = name;
-        product.price = price;
-        product.quantity = quantity;
-        return product;
-    }
 }
