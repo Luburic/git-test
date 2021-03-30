@@ -1,44 +1,36 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 
 public class Store {
 
     public static void main(String[] args) {
-        //Za svaki proizvod ukljuci i njegovu cenu i kolicinu
+        List<Product> inventory = createInventory();
 
-        ArrayList<HashMap<String, String>> inventory = createInventory();
-
-
-        System.out.println("Unesi parametar pretrage:");
-        Scanner scanner = new Scanner(System.in);
-        String searchText = scanner.nextLine();
-
-        for (HashMap<String, String> p : inventory) {
-            if (p.get("name").toUpperCase().contains(searchText.toUpperCase())) {
-                System.out.println("\n\nName: " + p.get("name"));
-                System.out.println("\nPrice: " + p.get("price"));
-                System.out.println("\nQuantity: " + p.get("quantity"));
+        //Sortiranje inventara po ceni
+        /*for(int j = 0; j < inventory.size(); j++) {
+            Product cheapestProduct = inventory.get(j);
+            for (int i = j + 1; i < inventory.size(); i++) {
+                if (inventory.get(i).price < cheapestProduct.price) {
+                    inventory.set(j, inventory.get(i));
+                    inventory.set(i, cheapestProduct);
+                    cheapestProduct = inventory.get(j);
+                }
             }
+        }*/
+        inventory.sort(new ProductPriceComparator());
+        for (Product product :inventory) {
+            System.out.println("Name: " + product.name + "; Price: " + product.price);
         }
 
+        System.out.println("Name: ");
     }
 
-    private static ArrayList<HashMap<String, String>> createInventory() {
-        ArrayList<HashMap<String, String>> inventory = new ArrayList<>();
-
-        inventory.add(createProduct("Tastatura XZ", "3000", "3"));
-        inventory.add(createProduct("Tastatura YY", "3999", "5"));
-        inventory.add(createProduct("Televizor LG KY", "25000", "3"));
-        inventory.add(createProduct("Televizor Samsung X1", "15000", "4"));
+    private static List<Product> createInventory() {
+        List<Product> inventory = new ArrayList<>(10000);
+        inventory.add(new Product("Tastatura XZ", 3999, 3));
+        inventory.add(new Product("Tastatura YY", 3000, 5));
+        inventory.add(new Product("Televizor LG KY", 100000, 3));
+        inventory.add(new Product("Televizor Samsung X1", 50000, 4));
         return inventory;
     }
 
-    private static HashMap<String, String> createProduct(String name, String price, String quantity) {
-        HashMap<String, String> product = new HashMap<>();
-        product.put("name", name);
-        product.put("price", price);
-        product.put("quantity", quantity);
-        return product;
-    }
 }
