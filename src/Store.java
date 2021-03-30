@@ -21,7 +21,7 @@ public class Store {
             System.out.println("Name: " + product.name + "; Price: " + product.price);
         }
 
-        //System.out.println("Name: " + cheapestProduct.name + "; Price: " + cheapestProduct.price);
+        System.out.println("Name: ");
     }
 
     private static List<Product> createInventory() {
