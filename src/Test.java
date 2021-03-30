@@ -1,17 +1,21 @@
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Test {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Scanner je definisan.");
-        System.out.println("Unesi prvi podatak:");
+        ArrayList<Integer> nizBrojeva = new ArrayList<Integer>();
+        nizBrojeva.add(3);
+        nizBrojeva.add(1);
+        nizBrojeva.add(5);
+        nizBrojeva.add(4);
+        nizBrojeva.add(2);
 
-        String prviUnos = scanner.nextLine();
-        System.out.println("Uneli ste:" + prviUnos);
+        Collections.reverse(nizBrojeva);
 
-        String drugiUnos = scanner.nextLine();
-        System.out.println("Uneli ste:" + drugiUnos);
+        for (Integer integer : nizBrojeva) {
+            System.out.println(integer);
+        }
 
     }
 

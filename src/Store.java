@@ -1,42 +1,35 @@
-import java.util.ArrayList;
+import java.util.*;
 
 public class Store {
 
     public static void main(String[] args) {
-        ArrayList<Product> inventory = createInventory();
+        List<Product> inventory = createInventory();
 
-
-        //System.out.println("Unesi parametar pretrage:");
-        //Scanner scanner = new Scanner(System.in);
-        //String searchText = scanner.nextLine();
-
-        //for (HashMap<String, String> p : inventory) {
-        //    if (p.get("name").toUpperCase().contains(searchText.toUpperCase())) {
-        //        System.out.println("\n\nName: " + p.get("name"));
-        //        System.out.println("\nPrice: " + p.get("price"));
-        //        System.out.println("\nQuantity: " + p.get("quantity"));
-        //    }
-        //}
-
-        int sum = 0;
-        for (Product p : inventory) {
-            double price = p.price;
-            double quantity = p.quantity;
-
-            sum += price * quantity;
+        //Sortiranje inventara po ceni
+        /*for(int j = 0; j < inventory.size(); j++) {
+            Product cheapestProduct = inventory.get(j);
+            for (int i = j + 1; i < inventory.size(); i++) {
+                if (inventory.get(i).price < cheapestProduct.price) {
+                    inventory.set(j, inventory.get(i));
+                    inventory.set(i, cheapestProduct);
+                    cheapestProduct = inventory.get(j);
+                }
+            }
+        }*/
+        inventory.sort(new ProductPriceComparator());
+        for (Product product :inventory) {
+            System.out.println("Name: " + product.name + "; Price: " + product.price);
         }
 
-        System.out.println("Total value is: " + sum);
-
+        //System.out.println("Name: " + cheapestProduct.name + "; Price: " + cheapestProduct.price);
     }
 
-    private static ArrayList<Product> createInventory() {
-        ArrayList<Product> inventory = new ArrayList<>();
-
-        inventory.add(new Product("Tastatura XZ", 3000, 3));
-        inventory.add(new Product("Tastatura YY", 3999, 5));
-        inventory.add(new Product("Televizor LG KY", 25000, 3));
-        inventory.add(new Product("Televizor Samsung X1", 15000, 4));
+    private static List<Product> createInventory() {
+        List<Product> inventory = new ArrayList<>(10000);
+        inventory.add(new Product("Tastatura XZ", 3999, 3));
+        inventory.add(new Product("Tastatura YY", 3000, 5));
+        inventory.add(new Product("Televizor LG KY", 100000, 3));
+        inventory.add(new Product("Televizor Samsung X1", 50000, 4));
         return inventory;
     }
 
